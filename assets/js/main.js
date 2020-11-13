@@ -1,0 +1,1 @@
+$( "#myDatepicker" ).datepicker();
