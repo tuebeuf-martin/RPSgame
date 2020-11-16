@@ -1,0 +1,29 @@
+@font-face{
+    font-family: "Royal Acid";
+    src:url("../fonts/Royalacid.ttf");
+}
+.header{
+    background-color: black;
+    height:170px;
+    font-family: "Royal Acid";
+}
+.title{
+    margin-top:20px;
+    font-size: 6em;
+}
+.score{
+    font-size: 2.2em;
+    margin-top:25px
+}
+.bgbody {
+
+    background-color: black;
+}
+
+.imgcard {
+
+padding-top: 30px;
+height: 15rem;
+padding-bottom: 20px;
+
+}
