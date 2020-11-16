@@ -4,7 +4,7 @@
 }
 .header{
     background-color: black;
-    height:170px;
+    height:120px;
     font-family: "Royal Acid";
 }
 .title{
@@ -15,15 +15,26 @@
     font-size: 2.2em;
     margin-top:25px
 }
-.bgbody {
+.bgbody1{
+    background-color: black;
+}
+
+.bgbody2 {
 
     background-color: black;
+    border-style: inset;
+    border-radius: 10px;
+    border-color: palegoldenrod;
 }
 
 .imgcard {
 
-padding-top: 30px;
-height: 15rem;
-padding-bottom: 20px;
+margin-top: 30px;
+height: 11rem;
+margin-bottom: 20px;
 
+
+}
+.image {
+    width : 40%;
 }
