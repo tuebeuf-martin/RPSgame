@@ -46,3 +46,10 @@ margin-bottom: 20px;
 body{
     background-color: black;
 }
+#rules{
+    margin-left: 60px;
+    margin-top: 30px;
+    width:10em;
+    border-radius: 50px
+
+}
