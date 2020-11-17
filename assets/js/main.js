@@ -11,13 +11,13 @@ $(function (){
     }
     
 }); 
-    var base = 0;
     var percentWins = (PWin / (AIWin + PWin + draws)) * 100;   
     var draws = 0;
     var games = 0;
     var AIWin = 0;
     var PWin = 0;
-    $("#scissors").on('mouseup', function(){
+    console.log(percentWins)
+    $("#scissors").on('click', function(){
         games +=1;
     $("#games").html(games);
     var result = compare('scissors', computerChoice());
@@ -25,24 +25,24 @@ $(function (){
         PWin +=1;
         $("#PCount").html(PWin);
         base += percentWins;
-        $("#wins").innerhtml(percentWins)
+        $("#wins").html(percentWins)
     }
     if (result == "lose"){
         AIWin +=1;
         $("#IACount").html(AIWin);
         base += percentWins;
-        $("#wins").innerhtml(percentWins);
+        $("#wins").html(percentWins);
     }
     if (result == "Tie"){
         alert("Egalité"); 
         draws +=1;
         base += percentWins;
-        $("#wins").innerhtml(percentWins);
+        $("#wins").html(percentWins);
     }
         
   });
   
-  $('#rock').on('mouseup', function(){
+  $('#rock').on('click', function(){
     games +=1;
     $("#games").html(games);
     var result = compare('rock', computerChoice());
@@ -50,22 +50,22 @@ $(function (){
         PWin +=1;
         $("#PCount").html(PWin);
         base += percentWins;
-        $("#wins").innerhtml(percentWins);
+        $("#wins").html(percentWins);
     }
     if (result == "lose"){
         AIWin +=1;
         $("#IACount").html(AIWin);
         base += percentWins;
-        $("#wins").innerhtml(percentWins);
+        $("#wins").html(percentWins);
     }
     if (result == "Tie")
         alert("Egalité")
         draws +=1;
         base += percentWins;
-        $("#wins").innerhtml(percentWins);
+        $("#wins").html(percentWins);
   });
   
-  $('#paper').on('mouseup', function(){
+  $('#paper').on('click', function(){
     games +=1;
     $("#games").html(games);
     var result = compare('paper', computerChoice());
@@ -73,19 +73,19 @@ $(function (){
         PWin +=1;
         $("#PCount").html(PWin);
         base += percentWins;
-        $("#wins").innerhtml(percentWins);
+        $("#wins").html(percentWins);
     }
     if (result == "lose"){
         AIWin +=1;
         $("#IACount").html(AIWin)
         base += percentWins;
-        $("#wins").innerhtml(percentWins);
+        $("#wins").html(percentWins);
     }
     if (result == "Tie")
         alert("Egalité")
         draws +=1;
         base += percentWins;
-        $("#wins").innerhtml(percentWins);
+        $("#wins").html(percentWins);
   });
   
   var compare = function(me, opponent) {

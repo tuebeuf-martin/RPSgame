@@ -37,7 +37,7 @@ margin-bottom: 20px;
 }
 .image {
     width : 50%;
-    position: relative;
+    position: static;
 }
 .games{
     font-size: 40px;
