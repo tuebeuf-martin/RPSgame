@@ -1,94 +1,53 @@
 $(document).ready(function(){
-$(function (){
-    $("#scissors").draggable ({ revert: "valid" });
+$(function (){//Ici je crée une fonction qui permet de deplacer mes elements//
+    
+    $(".imgcard").draggable ({ revert: "valid" });
 
-    $("#rock").draggable ({ revert: "valid" });
-
-    $("#paper").draggable ({ revert: "valid" });
-
-    $("#dropzone").droppable ();{
-
-    }
+    $("#dropzone").droppable ({//Ici je peux les deposer//
+        
+      drop: function( event, ui ) {
+        launch(ui.draggable.attr('id'));
+      }
+    });
     
 }); 
-    var percentWins = (PWin / (AIWin + PWin + draws)) * 100;   
+    var percentWins = 0;   
     var draws = 0;
     var games = 0;
-    var AIWin = 0;
+    var AIWin = 0;//Je defini mes variables (Je gagne ou l'ordinateur gagne)
     var PWin = 0;
     console.log(percentWins)
-    $("#scissors").on('click', function(){
+    
+    function launch(choice) {
         games +=1;
-    $("#games").html(games);
-    var result = compare('scissors', computerChoice());
+        $("#games").html(games);
+
+    var result = compare(choice, computerChoice());
     if (result == "win"){
         PWin +=1;
         $("#PCount").html(PWin);
-        base += percentWins;
-        $("#wins").html(percentWins)
+        
     }
-    if (result == "lose"){
+    else if (result == "lose"){
         AIWin +=1;
         $("#IACount").html(AIWin);
-        base += percentWins;
-        $("#wins").html(percentWins);
+        
     }
-    if (result == "Tie"){
+    else if (result == "Tie"){
         alert("Egalité"); 
         draws +=1;
-        base += percentWins;
-        $("#wins").html(percentWins);
-    }
         
-  });
+    }
+    else {
+        console.log('Erreur : ' + result);
+        alert('Something went wrong!');
+    }
+    
+    percentWins = (PWin / games ) *100;
+    $("#wins").html(Math.round(percentWins));
+  }
   
-  $('#rock').on('click', function(){
-    games +=1;
-    $("#games").html(games);
-    var result = compare('rock', computerChoice());
-    if (result == "win"){
-        PWin +=1;
-        $("#PCount").html(PWin);
-        base += percentWins;
-        $("#wins").html(percentWins);
-    }
-    if (result == "lose"){
-        AIWin +=1;
-        $("#IACount").html(AIWin);
-        base += percentWins;
-        $("#wins").html(percentWins);
-    }
-    if (result == "Tie")
-        alert("Egalité")
-        draws +=1;
-        base += percentWins;
-        $("#wins").html(percentWins);
-  });
-  
-  $('#paper').on('click', function(){
-    games +=1;
-    $("#games").html(games);
-    var result = compare('paper', computerChoice());
-    if (result == "win"){
-        PWin +=1;
-        $("#PCount").html(PWin);
-        base += percentWins;
-        $("#wins").html(percentWins);
-    }
-    if (result == "lose"){
-        AIWin +=1;
-        $("#IACount").html(AIWin)
-        base += percentWins;
-        $("#wins").html(percentWins);
-    }
-    if (result == "Tie")
-        alert("Egalité")
-        draws +=1;
-        base += percentWins;
-        $("#wins").html(percentWins);
-  });
-  
-  var compare = function(me, opponent) {
+  var compare = function(me, opponent) {//Conditions de victoire
     if(me === 'rock') {
       
         if(opponent === 'rock') {
@@ -106,7 +65,7 @@ $(function (){
         } else if (opponent === 'rock') {
           return 'win';
         } else if (opponent === 'scissors') {
-          return 'Lose';
+          return 'lose';
       }
     } else if (me === 'scissors') {
       
@@ -121,14 +80,17 @@ $(function (){
       return "???"
     }
   };
-  var computerChoice = function() {
+  var computerChoice = function() {//Ce qui permet a l'ordiateur de faire son choix
     var random = Math.random();
+    var computerChoice = '';
     if (random <= 0.33333333333) {
-      return  'rock';
+        computerChoice = 'rock';
     } else if(random >= 0.66666666666) {
-      return 'paper';
+        computerChoice = 'paper';
     } else {
-      return 'scissors';
+        computerChoice = 'scissors';
     } 
+    $('#IAChoice').html(" (IA played "+computerChoice+")");
+    return computerChoice;
 };
 })
