@@ -1,14 +1,13 @@
 $(document).ready(function(){
-$(function (){//Ici je crée une fonction qui permet de deplacer mes elements//
+//Ici je crée une fonction qui permet de deplacer mes elements//
     
-    $(".imgcard").draggable ({ revert: "valid" });
-
-    $("#dropzone").droppable ({//Ici je peux les deposer//
+    $(".imgcard").draggable ({revert: "valid"});
+    $(".dropzone").droppable ({//Ici je peux les deposer//
         
-      drop: function( event, ui ) {
+      drop: function( event, ui ) {//Quand la fonction drop est appelé//
         launch(ui.draggable.attr('id'));
+        
       }
-    });
     
 }); 
     var percentWins = 0;   
@@ -76,11 +75,9 @@ $(function (){//Ici je crée une fonction qui permet de deplacer mes elements//
         } else if (opponent === 'rock') {
           return 'lose';
       }
-    } else {
-      return "???"
-    }
+    } 
   };
-  var computerChoice = function() {//Ce qui permet a l'ordiateur de faire son choix
+  var computerChoice = function() {//Ce qui permet a l'ordinateur de faire son choix
     var random = Math.random();
     var computerChoice = '';
     if (random <= 0.33333333333) {
@@ -92,5 +89,5 @@ $(function (){//Ici je crée une fonction qui permet de deplacer mes elements//
     } 
     $('#IAChoice').html(" (IA played "+computerChoice+")");
     return computerChoice;
-};
+  };
 })

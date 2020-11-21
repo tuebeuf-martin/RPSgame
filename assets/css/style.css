@@ -4,7 +4,7 @@
 }
 .header{
     background-color: black;
-    height:120px;
+    height:100px;
     font-family: "Royal Acid";
 }
 .title{
@@ -13,8 +13,9 @@
     font-size: 5em;
 }
 .score{
-    font-size: 2.2em;
-    margin-top:25px
+    font-size: 1.6em;
+    margin-top:20px;
+    margin-left:3em;
 }
 .bgbody1{
     background-color: black;
@@ -30,15 +31,27 @@
 
 .imgcard {
 
-margin-top: 30px;
+margin-top: 20px;
 height: 11rem;
-margin-bottom: 20px;
-
+margin-bottom: 10px;
 
 }
-.image {
-    width : 50%;
-    position: static;
+.cardzone{
+    margin-left: 20px;
+    margin-top:22%;
+    height: 11rem;
+}
+#PCard{
+    border: solid 3px black;
+    border-radius : 5px;
+    height: 11rem;
+    width: 7.8rem;
+}
+.table {
+    background-image : url(../img/pokerTable.png);
+    background-image : cover;
+    width : 874px;
+    Height : 477px;
 }
 .games{
     font-size: 40px;
@@ -49,7 +62,11 @@ body{
 #rules{
     margin-left: 60px;
     margin-top: 30px;
-    width:10em;
-    border-radius: 50px
+    width:5em;
+    height: 5em;
+    border-radius: 20px
 
+}
+#stats{
+    font-size: 20px;
 }

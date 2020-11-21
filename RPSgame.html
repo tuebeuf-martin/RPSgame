@@ -13,24 +13,28 @@
     </head>
     <body>
         <header class="header text-white">
-            <div class="d-flex">
-                    <p class="title flex-fill">Shifumi</p>
-                    <p class="score flex-fill">IA : <span id="IACount">0</span> <span id="IAChoice"></span><br>
+                <div class="d-flex justify-content-between">
+                    <p class="title">Shifumi</p>
+                    <p class="score flex-fill text-align-center">IA : <span id="IACount">0</span> <span id="IAChoice"></span><br>
                     JOUEUR : <span id="PCount">0</span></p>
-                        <div>
-                            <p class="text-align-right">Games = <span id="games">0</span></p>
-                            <p>Wins = <span id="wins">0</span>%</p>
-                            <p id="draw"></p>
-                        </div>
-                    
-            </div>
+                    <div id="stats">
+                        <p class="text-align-right">Games = <span id="games">0</span></p>
+                        <p>Wins = <span id="wins">0</span>%</p>
+                        <p id="draw"></p>
+                    </div>
+                </div>
         </header>
-        <img src="assets/img/RPS.png" class="position-absolute" id="rules">
+        
         <div class="bgbody1">
-            <div id="dropzone" style="text-align: center;">
-                <img class="image" src="assets/img/pokerTable.png" class="img-fluid" width="80%">
+            <div>
+                <div class="table mx-auto d-flex justify-content-center" id="pokerTable">
+                    <div class="cardzone mr-4 dropzone" id="PCard" id="dropzone"></div>
+                    <img class="cardzone ml-4" id="AICard" src="assets/img/card.png">
+                </div>
             </div>
+            
         </div>
+            
             <div class="bgbody2 fixed-bottom">
                 <div class="d-flex justify-content-around">
                     <img class="imgcard border border-warning rounded-lg" id="rock" src="assets/img/Casino (4).jpg" style="display:inline;">
