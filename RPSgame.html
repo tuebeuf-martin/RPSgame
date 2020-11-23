@@ -13,7 +13,7 @@
     </head>
     <body>
         <header class="header text-white">
-                <div class="d-flex justify-content-between">
+                <div class="d-flex">
                     <p class="title">Shifumi</p>
                     <p class="score flex-fill text-align-center">IA : <span id="IACount">0</span> <span id="IAChoice"></span><br>
                     PLAYER : <span id="PCount">0</span></p>
@@ -28,8 +28,12 @@
         <div class="bgbody1">
             <div>
                 <div class="table mx-auto d-flex justify-content-center" id="pokerTable">
-                    <div class="cardzone mr-4 dropzone" id="PCard" id="dropzone"></div>
-                    <img class="cardzone ml-4" id="AICard" src="assets/img/card.png">
+                    <div class="mx-auto d-flex justify-content-center" id="game">
+                        <img class="cardzone dropzone" id="PCard" id="dropzone">
+                        <img class="AI text-align-center" src="assets/img/HappyComp.png">   
+                        <img class="cardzone" id="AICard" src="assets/img/card.png">
+                        
+                    </div>
                 </div>
             </div>
             
