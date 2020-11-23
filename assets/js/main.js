@@ -1,8 +1,8 @@
 $(document).ready(function(){
 //Ici je crée une fonction qui permet de deplacer mes elements//
     
-    $(".imgcard").draggable ({revert: "valid"});
-    $(".dropzone").droppable ({//Ici je peux les deposer//
+    $(".imgcard").draggable ({revert: "valid",revertDuration: 600,snap: true});
+    $(".dropzone").droppable ({snap: true,//Ici je peux les deposer//
         
       drop: function( event, ui ) {//Quand la fonction drop est appelé//
         launch(ui.draggable.attr('id'));
@@ -25,16 +25,31 @@ $(document).ready(function(){
     if (result == "win"){
         PWin +=1;
         $("#PCount").html(PWin);
+        setTimeout(
+          function() 
+          {
+            $("#AICard").attr("src", "card.png")
+          }, 1500);
         
     }
     else if (result == "lose"){
         AIWin +=1;
         $("#IACount").html(AIWin);
+        setTimeout(
+          function() 
+          {
+            $("#AICard").attr("src", "card.png")
+          }, 1500);
         
     }
     else if (result == "Tie"){
-        alert("Egalité"); 
+        $('#IAChoice').html(" (Tie!)"); 
         draws +=1;
+        setTimeout(
+          function() 
+          {
+            $("#AICard").attr("src", "card.png")
+          }, 1500);
         
     }
     else {
@@ -50,29 +65,41 @@ $(document).ready(function(){
     if(me === 'rock') {
       
         if(opponent === 'rock') {
+          $("#AICard").attr("src", "Casino (4).jpg");
+          $( "#AICard" ).effect( "shake" );
             return 'Tie';
         } else if (opponent === 'paper') {
+          $("#AICard").attr("src", "Casino (3).jpg");
           return 'lose';
         } else if (opponent === 'scissors') {
+          $("#AICard").attr("src", "Casino (2).jpg");
           return 'win';
         }
       
     } else if (me === 'paper') {
       
         if(opponent === 'paper') {
+          $("#AICard").attr("src", "Casino (3).jpg");
+          $( "#AICard" ).effect( "shake" );
           return 'Tie';
         } else if (opponent === 'rock') {
+          $("#AICard").attr("src", "Casino (4).jpg");
           return 'win';
         } else if (opponent === 'scissors') {
+          $("#AICard").attr("src", "Casino (2).jpg");
           return 'lose';
       }
     } else if (me === 'scissors') {
       
         if(opponent === 'scissors') {
+          $("#AICard").attr("src", "Casino (2).jpg");
+          $( "#AICard" ).effect( "shake" );
           return 'Tie';
         } else if (opponent === 'paper') {
+          $("#AICard").attr("src", "Casino (3).jpg");
           return 'win';
         } else if (opponent === 'rock') {
+          $("#AICard").attr("src", "Casino (4).jpg");
           return 'lose';
       }
     } 

@@ -42,11 +42,15 @@ margin-bottom: 10px;
     height: 11rem;
 }
 #PCard{
-    border: solid 3px black;
+    border: dashed 3px black;
     border-radius : 5px;
     height: 11rem;
     width: 7.8rem;
 }
+#AICard{
+    border-radius : 5px;
+}
+
 .table {
     background-image : url(../img/pokerTable.png);
     background-image : cover;
